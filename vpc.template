@@ -50,7 +50,7 @@
     "PublicNetAZ2": {
       "Type": "AWS::EC2::Subnet",
       "Properties": {
-        "AvailabilityZone": { "Fn::Select": [ "1", { "Fn::GetAZs": { "Ref": "AWS::Region" } } ] },
+        "AvailabilityZone": { "Fn::Select": [ "2", { "Fn::GetAZs": { "Ref": "AWS::Region" } } ] },
         "CidrBlock": { "Fn::FindInMap" : [ "VPCRanges", { "Ref": "CIDRRange"},  "PublicSubnetAZ2" ] },
         "MapPublicIpOnLaunch": "True",
         "Tags": [
@@ -75,7 +75,7 @@
     "PrivateNetAZ2": {
       "Type": "AWS::EC2::Subnet",
       "Properties": {
-        "AvailabilityZone": { "Fn::Select": [ "1", { "Fn::GetAZs": { "Ref": "AWS::Region" } } ] },
+        "AvailabilityZone": { "Fn::Select": [ "2", { "Fn::GetAZs": { "Ref": "AWS::Region" } } ] },
         "CidrBlock": { "Fn::FindInMap" : [ "VPCRanges", { "Ref": "CIDRRange"},  "PrivateSubnetAZ2" ] },
         "MapPublicIpOnLaunch": "False",
         "Tags": [
